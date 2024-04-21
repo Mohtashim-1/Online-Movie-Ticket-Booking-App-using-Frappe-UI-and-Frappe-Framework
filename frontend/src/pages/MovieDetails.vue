@@ -40,30 +40,27 @@
 
         <div v-else-if="currentStep == 1">
             <h2 class="font-medium text-xl mt-7 text-gray-900">How many Seats?</h2>
-            <Button v-for="(index) in 8">{{ index }}</Button>
-
-
-
+            <div class="flex flex-col space-y-5 ">
+                <Button @click="setNumerofSeats(index)" size="lg"
+                    :variant="index === bookingData.numberOfSeats ? 'subtle' : 'white'" class=" shadow-lg mt-6"
+                    v-for="(index) in 8">{{ index }}</Button>
+            </div>
         </div>
-
-
-
-
         <div class="flex mt-64 w-18 items-center justify-center">
             <Button class=" mt-5" size="lg" v-if="currentStep !== 0" variant="subtle" @click="currentStep--">Go
                 Back</Button>
         </div>
-
     </div>
-
-
 </template>
-
 <script setup>
-
-import { ref } from 'vue'
-
+import { ref, reactive } from 'vue'
 const currentStep = ref(0)
+const bookingData = reactive({
+    numberOfSeats: 0,
+    seat: [],
+})
+function setNumerofSeats(n) {
+    bookingData.numberOfSeats = n
+}
 </script>
-
 export default MovieDetail
