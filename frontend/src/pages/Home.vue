@@ -2,13 +2,14 @@
   <h1>Hello World</h1>
   <div class="p-8">
 
-    <MovieDetail />
+    <MovieDetails />
     <h1>Hello World</h1>
   </div>
 </template>
 
 <script setup>
 
-import { MovieDetail } from '../../src/pages/MovieDetails.vue'
+import MovieDetails from './MovieDetails.vue';
+
 
 </script>
