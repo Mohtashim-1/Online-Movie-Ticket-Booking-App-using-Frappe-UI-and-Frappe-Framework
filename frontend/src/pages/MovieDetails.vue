@@ -73,39 +73,43 @@
                             <Button size="sm" variant="outline">01:30PM</Button>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
-
         </div>
+
         <div v-else-if="currentStep === 3">
             <h2 class="font-medium text-xl mt-7 text-gray-900">Select Seats</h2>
 
-
-
-
             <div>
-
-
-
-
-
-
-
-
-
+                <div :key="row" class="flex flex-row" v-for="row in Object.keys(seatStructure)">
+                    <span @click="selectSeat(row, seat[0])" v-for="seat in seatStructure[row]"
+                        class="w-6 h-8 m-2 rounded-[2px]" :class="[
+                            seat[1] === 'Available'
+                                ? 'bg-blue-300'
+                                : seat[1] === 'Selected'
+                                    ? 'bg-blue-600'
+                                    : 'bg-gray-300',
+                            hasSelectedCorrectNumberOfSeats
+                                ? 'cursor-not-allowed'
+                                : 'cursor-pointer',
+                        ]"></span>
+                </div>
             </div>
-            <div>
-
-            </div>
-
         </div>
+
+        <div v-else-if="currentStep === 4">
+            <div class="w-full flex items-center mt-7 flex-col">
+
+                <h1 class=" text-[110px]">🍿🍿🍿</h1>
+                <h2 class="font-medium text-xl mt-7 text-gray-900">Enjoy the Movie</h2>
+            </div>
+        </div>
+
         <div class="flex flex-row mt-6 space-x-2 item-center space-between justify-center">
-            <Button size="xl" v-if="currentStep !== 0" variant="solid" @click="currentStep++"> Next</Button>
+            <Button size="xl" v-if="currentStep !== 0 && currentStep !== 4" variant="solid" @click="currentStep++">
+                Next</Button>
             <!-- class=" mt-5" size="lg" -->
-            <Button size="xl" v-if="currentStep !== 0" variant="subtle" @click="currentStep--">Go
+            <Button size="xl" v-if="currentStep !== 0 && currentStep !== 4" variant="subtle" @click="currentStep--">Go
                 Back</Button>
 
         </div>
@@ -128,7 +132,7 @@ function getSeatStructure(alphabets, numbers) {
     return structure;
 }
 
-console.log(getSeatStructure(["A", "B", "C", "D", " E"], [1, 2, 3, 4, 5, 6, 7, 8]))
+const seatStructure = getSeatStructure(["A", "B", "C", "D", " E"], [1, 2, 3, 4, 5, 6, 7, 8])
 
 
 const today = new Date().toISOString().substr(0, 10);
