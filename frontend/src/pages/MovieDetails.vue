@@ -75,11 +75,33 @@
                     </div>
 
                 </div>
+
             </div>
 
 
         </div>
+        <div v-else-if="currentStep === 3">
+            <h2 class="font-medium text-xl mt-7 text-gray-900">Select Seats</h2>
 
+
+
+
+            <div>
+
+
+
+
+
+
+
+
+
+            </div>
+            <div>
+
+            </div>
+
+        </div>
         <div class="flex flex-row mt-6 space-x-2 item-center space-between justify-center">
             <Button size="xl" v-if="currentStep !== 0" variant="solid" @click="currentStep++"> Next</Button>
             <!-- class=" mt-5" size="lg" -->
@@ -95,11 +117,26 @@
 import { ref, reactive } from 'vue'
 const currentStep = ref(0)
 
+function getSeatStructure(alphabets, numbers) {
+    const structure = {}
+    for (const alphabet of alphabets) {
+        structure[alphabet] = []
+        for (const number of numbers) {
+            structure[alphabet].push([number, 'Available'])
+        }
+    }
+    return structure;
+}
+
+console.log(getSeatStructure(["A", "B", "C", "D", " E"], [1, 2, 3, 4, 5, 6, 7, 8]))
+
+
 const today = new Date().toISOString().substr(0, 10);
 
 const bookingData = reactive({
     numberOfSeats: 0,
     seat: [],
+    selectedSeats: [],
     date: today
 })
 function setNumerofSeats(n) {
