@@ -48,23 +48,35 @@
             </div>
 
         </div>
+
+        <!-- 3rd page -->
+
         <div v-else-if="currentStep == 2">
-            <div class="flex flex-col space-y-4 max-w-sm">
+            <div class="flex flex-col space-y-4 max-w-sm ">
                 <h2 class="font-medium text-xl mt-7 text-gray-900">Date</h2>
                 <Input type="date" value="today" w-model="bookingData.date" />
             </div>
             <div class="flex flex-col space-y-4 max-w-sm">
                 <h2 class="font-medium text-xl mt-7 text-gray-900">Cinema & Show</h2>
-                <div>
+                <div class="space-y-2">
                     <div class=" bg-white shadow-xl p-4 rounded  flex flex-col space-y-4">
-                        <h3 class="text-sm font-bold text-gray-800"></h3>
+                        <h3 class="text-sm font-bold text-gray-800">Star Talkies</h3>
                         <div class="flex flex-row space-x-2">
                             <Button size="sm" variant="outline">12:30PM</Button>
                             <Button size="sm" variant="outline">03:30PM</Button>
                         </div>
                     </div>
+                    <div class=" bg-white shadow-xl p-4 rounded  flex flex-col space-y-4">
+                        <h3 class="text-sm font-bold text-gray-800">Anupama Theater</h3>
+                        <div class="flex flex-row space-x-2">
+                            <Button size="sm" variant="outline">11:10AM</Button>
+                            <Button size="sm" variant="outline">01:30PM</Button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+
 
         </div>
 
