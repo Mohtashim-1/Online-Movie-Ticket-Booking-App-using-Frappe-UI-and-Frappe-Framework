@@ -49,7 +49,11 @@
 
         </div>
         <div v-else-if="currentStep == 2">
-            <h2 class="font-medium text-xl mt-7 text-gray-900">How many Seats?</h2>
+            <div class="flex flex-col space-y-4 max-w-sm">
+                <h2 class="font-medium text-xl mt-7 text-gray-900">Date</h2>
+                <Input type="date" value="today" w-model="bookingData.date" />
+
+            </div>
 
 
         </div>
@@ -68,9 +72,11 @@
 <script setup>
 import { ref, reactive } from 'vue'
 const currentStep = ref(0)
+const today = new Date().toISOString().substr(0, 10);
 const bookingData = reactive({
     numberOfSeats: 0,
     seat: [],
+    date: today,
 })
 function setNumerofSeats(n) {
     bookingData.numberOfSeats = n
