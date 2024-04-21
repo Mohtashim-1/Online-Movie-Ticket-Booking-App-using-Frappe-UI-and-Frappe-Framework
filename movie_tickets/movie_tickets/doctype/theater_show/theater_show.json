@@ -24,17 +24,31 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "istable": 1,
  "links": [],
- "modified": "2024-04-21 18:19:09.300508",
+ "modified": "2024-04-21 18:52:05.491481",
  "modified_by": "Administrator",
  "module": "Movie Tickets",
  "name": "Theater Show",
  "owner": "Administrator",
- "permissions": [],
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "start_time",
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1

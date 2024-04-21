@@ -54,7 +54,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-21 18:14:29.738319",
+ "modified": "2024-04-21 18:46:52.932403",
  "modified_by": "Administrator",
  "module": "Movie Tickets",
  "name": "Movie",
@@ -73,9 +73,11 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "title",
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1
