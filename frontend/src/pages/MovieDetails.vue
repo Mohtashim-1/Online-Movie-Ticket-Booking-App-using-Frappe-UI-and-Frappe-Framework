@@ -52,9 +52,19 @@
             <div class="flex flex-col space-y-4 max-w-sm">
                 <h2 class="font-medium text-xl mt-7 text-gray-900">Date</h2>
                 <Input type="date" value="today" w-model="bookingData.date" />
-
             </div>
-
+            <div class="flex flex-col space-y-4 max-w-sm">
+                <h2 class="font-medium text-xl mt-7 text-gray-900">Cinema & Show</h2>
+                <div>
+                    <div class=" bg-white shadow-xl p-4 rounded  flex flex-col space-y-4">
+                        <h3 class="text-sm font-bold text-gray-800"></h3>
+                        <div class="flex flex-row space-x-2">
+                            <Button size="sm" variant="outline">12:30PM</Button>
+                            <Button size="sm" variant="outline">03:30PM</Button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
@@ -72,11 +82,13 @@
 <script setup>
 import { ref, reactive } from 'vue'
 const currentStep = ref(0)
+
 const today = new Date().toISOString().substr(0, 10);
+
 const bookingData = reactive({
     numberOfSeats: 0,
     seat: [],
-    date: today,
+    date: today
 })
 function setNumerofSeats(n) {
     bookingData.numberOfSeats = n
