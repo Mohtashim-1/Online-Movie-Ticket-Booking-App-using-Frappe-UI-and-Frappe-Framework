@@ -25,7 +25,7 @@
                 <div class="flex item-center justify-center mt-7">
                     <Button size="xl" variant="solid" @click="currentStep++"> Book Ticket</Button>
                 </div>
-                <div class="flex flex-col space-y-3 mt-64">
+                <div class="flex flex-col space-y-3 mt-4">
                     <h2 class="text-grey-700 font-bold uppercase ">Synopsis</h2>
                     <p class="text=gray-600 text-lg font-normal ">Lorem ipsum dolor sit amet consectetur, adipisicing
                         elit.
@@ -38,6 +38,7 @@
 
         </div>
 
+
         <div v-else-if="currentStep == 1">
             <h2 class="font-medium text-xl mt-7 text-gray-900">How many Seats?</h2>
             <div class="flex flex-col space-y-5 ">
@@ -45,11 +46,23 @@
                     :variant="index === bookingData.numberOfSeats ? 'subtle' : 'white'" class=" shadow-lg mt-6"
                     v-for="(index) in 8">{{ index }}</Button>
             </div>
+
         </div>
-        <div class="flex mt-64 w-18 items-center justify-center">
-            <Button class=" mt-5" size="lg" v-if="currentStep !== 0" variant="subtle" @click="currentStep--">Go
+        <div v-else-if="currentStep == 2">
+            <h2 class="font-medium text-xl mt-7 text-gray-900">How many Seats?</h2>
+
+
+        </div>
+
+        <div class="flex flex-row mt-6 space-x-2 item-center space-between justify-center">
+            <Button size="xl" v-if="currentStep !== 0" variant="solid" @click="currentStep++"> Next</Button>
+            <!-- class=" mt-5" size="lg" -->
+            <Button size="xl" v-if="currentStep !== 0" variant="subtle" @click="currentStep--">Go
                 Back</Button>
+
         </div>
+
+
     </div>
 </template>
 <script setup>
