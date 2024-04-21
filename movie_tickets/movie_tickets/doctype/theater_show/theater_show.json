@@ -1,0 +1,41 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-04-21 18:19:09.300508",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "theater",
+  "start_time"
+ ],
+ "fields": [
+  {
+   "fieldname": "theater",
+   "fieldtype": "Link",
+   "label": "Theater",
+   "options": "Movie Theater"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Start Time"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-04-21 18:19:09.300508",
+ "modified_by": "Administrator",
+ "module": "Movie Tickets",
+ "name": "Theater Show",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
