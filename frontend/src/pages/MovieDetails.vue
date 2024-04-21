@@ -39,11 +39,19 @@
         </div>
 
         <div v-else-if="currentStep == 1">
-            <h2 class=" font-medium text-xl text-gray-900">How many Seats?</h2>
+            <h2 class="font-medium text-xl mt-7 text-gray-900">How many Seats?</h2>
+            <Button v-for="(index) in 8">{{ index }}</Button>
+
+
+
         </div>
 
-        <div class="flex   mt-64 w-18 items-center justify-center">
-            <Button size="lg" v-if="currentStep !== 0" variant="subtle" @click="currentStep--">Go Back</Button>
+
+
+
+        <div class="flex mt-64 w-18 items-center justify-center">
+            <Button class=" mt-5" size="lg" v-if="currentStep !== 0" variant="subtle" @click="currentStep--">Go
+                Back</Button>
         </div>
 
     </div>
